@@ -1,0 +1,29 @@
+
+import React, { useEffect, useState} from 'react';
+import ProductCard from './ProductCard';
+import { data } from 'react-router-dom';
+
+function ProductList({ addToCart }) {
+  const [products, setProducts]= useState([]);
+
+  useEffect(()=> {
+    fetch('http://localhost:5000/api/products')
+    .then(res => res.json())
+    .then(data => setProducts(data))
+    .catch(err => console.error('Failed to load products:',err));
+  }, []);
+
+  return (
+    <div className='product-list'>
+      {products && products.length >0 ? (
+        products.map((item) => (
+        <ProductCard key={item.id} product={item} addToCart={addToCart} />
+      ))
+    ) :(
+      <p>Loading products...</p>
+    )}
+    </div>
+  );
+}
+
+export default ProductList;
