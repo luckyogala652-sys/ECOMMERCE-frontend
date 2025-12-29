@@ -7,7 +7,7 @@ function ProductList({ addToCart }) {
   const [products, setProducts]= useState([]);
 
   useEffect(()=> {
-    fetch('http://localhost:5000/api/products')
+    fetch('https://ecommerce-backend-ejce.onrender.com/api/products')
     .then(res => res.json())
     .then(data => setProducts(data))
     .catch(err => console.error('Failed to load products:',err));
