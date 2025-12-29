@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState} from 'react';
 import ProductCard from './ProductCard';
-import { data } from 'react-router-dom';
 
 function ProductList({ addToCart }) {
   const [products, setProducts]= useState([]);
