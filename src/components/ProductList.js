@@ -43,7 +43,7 @@ function ProductList({ addToCart }) {
       {/* SUBCATEGORY BUTTONS */}
       {category === "toiletries" && (
         <div className="subcategories">
-          <button onClick={() => setSubcategory("bathing soaps")}>Soaps</button>
+          <button onClick={() => setSubcategory("soaps")}>Soaps</button>
           <button onClick={() => setSubcategory("toothpaste")}>Toothpaste</button>
           <button onClick={() => setSubcategory("others")}>Others</button>
         </div>
