@@ -43,12 +43,20 @@ function ProductList({ addToCart }) {
       {/* SUBCATEGORY BUTTONS */}
       {category === "toiletries" && (
         <div className="subcategories">
-          <button onClick={() => setSubcategory("soap")}>Soaps</button>
+          <button onClick={() => setSubcategory("bathing soap")}>Soaps</button>
           <button onClick={() => setSubcategory("toothpaste")}>Toothpaste</button>
           <button onClick={() => setSubcategory("others")}>Others</button>
         </div>
       )}
 
+      {category === "beverages" && (
+        <div className="subcategories">
+          <button onClick={() => setSubcategory("cocoa and chocolate powder")}>
+            Cocoa & Chocolate
+          </button>
+        </div>
+      )}
+      
       {/* PRODUCT LIST */}
       <div className="product-list">
         {filteredProducts.length > 0 ? (
