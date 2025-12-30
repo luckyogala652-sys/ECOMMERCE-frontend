@@ -4,6 +4,8 @@ import { CartContext } from '../context/CartContext';
 function CartPage() {
   const { cart, removeFromCart } = useContext(CartContext);
 
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+
   return (
     <div className="cart-page">
       <h2>Your Cart</h2>
@@ -20,8 +22,16 @@ function CartPage() {
           <button onClick={() => removeFromCart(item.id)}>Remove</button>
         </div>
       ))}
+      {cart.length > 0 (
+        <>
+          <h3>Total:{total.toFixed(2)}</h3>
+          <button style={{ marginTop: '10px' }}>Pay Now</button>
+        </>
+      )}
+        
     </div>
   );
 }
+   
 
 export default CartPage;
