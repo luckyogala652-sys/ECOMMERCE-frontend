@@ -22,9 +22,9 @@ function CartPage() {
           <button onClick={() => removeFromCart(item.id)}>Remove</button>
         </div>
       ))}
-      {cart.length > 0 (
+      {cart.length > 0 && (
         <>
-          <h3>Total:{total.toFixed(2)}</h3>
+          <h3>Total:${cart.reduce((acc, item) => acc + item.price, 0).toFixed(2)}</h3>
           <button style={{ marginTop: '10px' }}>Pay Now</button>
         </>
       )}
