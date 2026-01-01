@@ -35,6 +35,21 @@ function ProductList({ addToCart }) {
         }}>Toiletries</button>
 
         <button onClick={() => {
+          setCategory("snacks");
+          setSubcategory("all");
+        }}>Snacks</button>
+
+        <button onClick={() => {
+          setCategory("cream");
+          setSubcategory("all");
+        }}>Cream</button>
+
+        <button onClick={() => {
+          setCategory("desserts");
+          setSubcategory("all");
+        }}>Desserts</button>
+
+        <button onClick={() => {
           setCategory("beverages");
           setSubcategory("all");
         }}>Beverages</button>
@@ -46,6 +61,24 @@ function ProductList({ addToCart }) {
           <button onClick={() => setSubcategory("soaps")}>Soaps</button>
           <button onClick={() => setSubcategory("toothpaste")}>Toothpaste</button>
           <button onClick={() => setSubcategory("others")}>Others</button>
+        </div>
+      )}
+
+      {category === "snacks" && (
+        <div className="subcategories">
+          <button onClick={() => setSubcategory("biscuits")}>Biscuits</button>
+        </div>
+      )}
+    
+      {category === "cream" && (
+        <div className="subcategories">
+          <button onClick={() => setSubcategory("body-cream")}>Soaps</button>
+        </div>
+      )}
+
+      {category === "desserts" && (
+        <div className="subcategories">
+          <button onClick={() => setSubcategory("frozen desserts")}>Frozen Desserts</button>
         </div>
       )}
 
