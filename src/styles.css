@@ -67,6 +67,10 @@ body {
   margin-top: .5rem;
 }
 
+.product-card button:hover {
+  background: #0056b3;
+}
+
 .cart-page {
   padding: 1rem;
 }
