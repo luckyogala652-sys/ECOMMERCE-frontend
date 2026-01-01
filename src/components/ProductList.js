@@ -23,70 +23,88 @@ function ProductList({ addToCart }) {
   return (
     <>
       {/* CATEGORY BUTTONS */}
-      <div className="categories">
-        <button onClick={() => {
-          setCategory("all");
-          setSubcategory("all");
-        }}>All</button>
-
-        <button onClick={() => {
-          setCategory("toiletries");
-          setSubcategory("all");
-        }}>Toiletries</button>
-
-        <button onClick={() => {
-          setCategory("snacks");
-          setSubcategory("all");
-        }}>Snacks</button>
-
-        <button onClick={() => {
-          setCategory("cream");
-          setSubcategory("all");
-        }}>Cream</button>
-
-        <button onClick={() => {
-          setCategory("desserts");
-          setSubcategory("all");
-        }}>Desserts</button>
-
-        <button onClick={() => {
-          setCategory("beverages");
-          setSubcategory("all");
-        }}>Beverages</button>
+      <div className="filter-bar">
+        {["all", "toiletries", "snacks", "cream", "desserts", "beverages"].map(cat => (
+          <button
+            key={cat}
+            className={`filter-btn ${category === cat ? "active" : ""}`}
+            onClick={() => {
+            setCategory(cat);
+            setSubcategory("all");
+            }}
+          >
+            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+          </button>
+        ))}
       </div>
 
       {/* SUBCATEGORY BUTTONS */}
       {category === "toiletries" && (
-        <div className="subcategories">
-          <button onClick={() => setSubcategory("soaps")}>Soaps</button>
-          <button onClick={() => setSubcategory("toothpaste")}>Toothpaste</button>
-          <button onClick={() => setSubcategory("others")}>Others</button>
+        <div className="sub-filter-bar">
+          {["soaps", "toothpaste", "others"].map(sub => (
+            <button
+              key={sub}
+              className={`sub-filter-btn ${subcategory === sub ? "active" : ""}`}
+              onClick={() => setSubcategory(sub)}
+            >
+              {sub.replace("-", " ")}
+            </button>
+          ))}
         </div>
       )}
 
       {category === "snacks" && (
-        <div className="subcategories">
-          <button onClick={() => setSubcategory("biscuits")}>Biscuits</button>
+        <div className="sub-filter-bar">
+          {["biscuits"].map(sub => (
+            <button
+              key={sub}
+              className={`sub-filter-btn ${subcategory === sub ? "active" : ""}`}
+              onClick={() => setSubcategory(sub)}
+            >
+              {sub.replace("-", " ")}
+            </button>
+          ))}
         </div>
       )}
     
       {category === "cream" && (
-        <div className="subcategories">
-          <button onClick={() => setSubcategory("body-cream")}>Soaps</button>
+        <div className="sub-filter-bar">
+          {["body-cream"].map(sub => (
+            <button
+              key={sub}
+              className={`sub-filter-btn ${subcategory === sub ? "active" : ""}`}
+              onClick={() => setSubcategory(sub)}
+            >
+              {sub.replace("-", " ")}
+            </button>
+          ))}
         </div>
       )}
-
       {category === "desserts" && (
-        <div className="subcategories">
-          <button onClick={() => setSubcategory("frozen desserts")}>Frozen Desserts</button>
+        <div className="sub-filter-bar">
+          {["frozen desserts"].map(sub => (
+            <button
+              key={sub}
+              className={`sub-filter-btn ${subcategory === sub ? "active" : ""}`}
+              onClick={() => setSubcategory(sub)}
+            >
+              {sub.replace("-", " ")}
+            </button>
+          ))}
         </div>
       )}
 
       {category === "beverages" && (
-        <div className="subcategories">
-          <button onClick={() => setSubcategory("cocoa and chocolate powder")}>
-            Cocoa & Chocolate
-          </button>
+        <div className="sub-filter-bar">
+          {["cocoa and chocolate powder"].map(sub => (
+            <button
+              key={sub}
+              className={`sub-filter-btn ${subcategory === sub ? "active" : ""}`}
+              onClick={() => setSubcategory(sub)}
+            >
+              {sub.replace("-", " ")}
+            </button>
+          ))}
         </div>
       )}
 
