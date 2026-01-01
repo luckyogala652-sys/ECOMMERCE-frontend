@@ -41,7 +41,7 @@ function ProductList({ addToCart }) {
       {/* SUBCATEGORY BUTTONS */}
       {category === "toiletries" && (
         <div className="sub-filter-bar">
-          {["soaps", "toothpaste", "others"].map(sub => (
+          {["soaps", "toothpaste"].map(sub => (
             <button
               key={sub}
               className={`sub-filter-btn ${subcategory === sub ? "active" : ""}`}
@@ -55,7 +55,7 @@ function ProductList({ addToCart }) {
 
       {category === "snacks" && (
         <div className="sub-filter-bar">
-          {["biscuits"].map(sub => (
+          {["biscuits", "nuts"].map(sub => (
             <button
               key={sub}
               className={`sub-filter-btn ${subcategory === sub ? "active" : ""}`}
@@ -96,7 +96,7 @@ function ProductList({ addToCart }) {
 
       {category === "beverages" && (
         <div className="sub-filter-bar">
-          {["cocoa and chocolate powder"].map(sub => (
+          {["cocoa and chocolate powder", "milk and diary powder"].map(sub => (
             <button
               key={sub}
               className={`sub-filter-btn ${subcategory === sub ? "active" : ""}`}
