@@ -69,7 +69,7 @@ function ProductList({ addToCart }) {
     
       {category === "cream" && (
         <div className="sub-filter-bar">
-          {["body-cream", "hair-cream"].map(sub => (
+          {["body-cream", "hair-cream", "face-cream"].map(sub => (
             <button
               key={sub}
               className={`sub-filter-btn ${subcategory === sub ? "active" : ""}`}
