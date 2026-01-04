@@ -34,34 +34,31 @@ function CartPage() {
       <h2 className="cart-title">Your Cart</h2>
 
       {cart.length === 0 ? (
-        <p className="empty-cart">Your cart is empty.</p>
-      ) : (
-        <>
-          {cart.map(item => (
-            <div key={item.id} className="cart-item">
-              <img src={item.image} alt={item.name} className="cart-image" />
+  <p className="empty-cart">Your cart is empty.</p>
+) : (
+  <>
+    {cart.map(item => (
+      <div key={item.id} className="cart-item">
+        <img src={item.image} alt={item.name} className="cart-image" />
+        <div className="cart-info">
+          <h4>{item.name}</h4>
+          <p>${item.price.toFixed(2)}</p>
+        </div>
+        <button
+          className="remove-btn"
+          onClick={() => removeFromCart(item.id)}
+        >
+          Remove
+        </button>
+      </div>
+    ))}
 
-              <div className="cart-info">
-                <h4>{item.name}</h4>
-                <p>${item.price.toFixed(2)}</p>
-              </div>
-
-              <button
-                className="remove-btn"
-                onClick={() => removeFromCart(item.id)}
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-          <PaystackButton {...componentProps} className="pay-btn" />
-
-          <div className="cart-summary">
-            <h3>Total: ${total.toFixed(2)}</h3>
-            <button className="pay-btn">Pay Now</button>
-          </div>
-        </>
-      )}
+    <div className="cart-summary">
+      <h3>Total: ${total.toFixed(2)}</h3>
+      <PaystackButton {...componentProps} className="pay-btn" />
+    </div>
+  </>
+)}
     </div>
   );
 }
